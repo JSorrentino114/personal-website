@@ -1,8 +1,15 @@
+@font-face {
+    font-family: Minecraftia;
+    src: url('../font/minecraftia/Minecraftia-Regular.ttf');
+}
+
 :root {
     --primary: #000;
     --secondary: #fff;
+    --tertiary: #666;
 
     color: var(--secondary);
+    font-family: 'Minecraftia', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 * {
@@ -11,38 +18,81 @@
 
 body {
     background-color: var(--primary);
+    margin: 0;
 }
 
-/* Generic Classes*/
-.flex-row{
-    display:flex;
+/* Generic Classes */
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+/* specific classes*/
+#sidebar-nav {
+    position: fixed;
+    right: -150px;
+    width: 150px;
+    height: 100%;
+    background-color: var(--tertiary);
+    z-index: 10;
+
+    transition: all ease-in-out 0.5s;
+    }
+
+#sidebar-nav>button {
+    margin-left: 120px;
+    margin-top: 10px;
+    width: 25px;
+    height: 25px;
+    padding: 0;
+
+    background: none;
+    border: none;
+}
+
+#sidebar-nav>button:hover {
+    cursor: pointer;
+}
+
+#sidebar-nav div button {
+    border: 2px solid black;
+    background: none;
+    margin: 10px 0 10px 0;
+}
+
+#sidebar-nav div button:hover {
+    cursor: pointer
+}
+
+
+
+/* Specific Classes */
 
 .page-num {
     position: fixed;
     bottom: 0px;
     right: 0px;
-
-    width: 60px;
+    z-index: 5;
 }
 
 .page-num p {
     margin: 5px;
 }
 
-#navbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
+/* #navbar {
+
+} */
 
 #navbar .left-nav-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
     font-size: 12px;
 
     width: 35%;
@@ -51,16 +101,63 @@ body {
 #navbar .left-nav-container img {
     width: 50px;
 }
-#navbar .hamburger-button{
+
+#navbar .hamburger-button {
     background: none;
     border: 0;
 }
 
-#navbar .hamburger-button img{
-
+#navbar .hamburger-button:hover {
+    cursor: pointer;
 }
 
-.arrow-button{
+.page-nav {
+}
+
+.arrow-button {
     background: none;
     border: none;
 }
+
+.arrow-button:hover {
+    cursor: pointer;
+}
+
+/* .arrow-button:hover img {
+} */
+
+.arrow-button img {
+    width: 40px;
+    height: 20px;
+}
+
+.page {
+    margin: 0 50px 0 100px;
+}
+
+.page .year-range {
+    width: 15%;
+}
+
+.page .project-title {
+    width: 20%;
+    font-size: 24px;
+}
+
+.page .description {
+    width: 65%;
+}
+
+/* IMPORTANT CLASSES */
+
+.hidden {
+    display: none;
+}
+
+#sidebar-nav.sidebar-shown{
+    right: 0px;
+}
+
+
+
+/* Animations*/ 
